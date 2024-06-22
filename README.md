@@ -1,5 +1,5 @@
 # Projeto Clean Code e Padrões de projeto
-## Restaurante ACME
+## Consultoria ACME
 
 O projeto a seguir foi feito para o cumprimento da matéria de Clean Code da pós graduação em Engenharia de Software na INFNET.
 O projeto será separado em três entregas, cada uma em uma branch.
