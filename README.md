@@ -8,11 +8,21 @@ O projeto será separado em três entregas, cada uma em uma branch.
 Se refere ao desenvolvimento do projeto, o projeto inicialmente não foi feito com foco em boas práticas por conta das próximas entregas, porém foi aplicado os cinco principios do SOLID.
 
 ### A segunda entrega
-Durante essa fase, o código inicial foi refatorado, eliminando os bad smells e aplicando os princípios do Clean Code.
+Durante essa fase, o código inicial foi refatorado, eliminando os bad smells e aplicando os princípios do Clean Code. As principais mudanças foram:
+
+- As constantes relacionada a Cargos (Estagiário, Júnior, Pleno e Sênior) foram substituidas por Enums.
+- As constantes relacionada a Setores (Desenvolvimento, DevOps e Banco de dados) foram substituidas por Enums.
+- Foi refatorado os construtores de Funcionario e Funcionarios Terceirizados para receber as mudanças acima.
+- O Switch de RecursosHumanos foi alterado de forma a receber as enums.
+- O método de reajustarSalario de RecursosHumanos foi refatorado de forma a ter apenas uma responsabilidade.
+- Criado novo método definePercentual, que ajusta qual percentual de reajuste salarial para cada cargo.
+- Renomeado algumas variáveis e métodos para maios coesão.
 
 ## A terceira entrega
 Na terceira entrega, foi implementado alguns desing patterns, sendo eles:
 
 Criacionais:
+
 Estrutural:
+
 Comportamental:
