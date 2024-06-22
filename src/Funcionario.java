@@ -1,32 +1,25 @@
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Set;
 
 public class Funcionario {
-
-    public static final int DESENVOLVIMENTO = 0;
-    public static final int DEVOPS = 1;
-    public static final int BANCO_DE_DADOS = 2;
-
-    public static final int ESTAGIARIO = 0;
-    public static final int JUNIOR = 1;
-    public static final int PLENO = 2;
-    public static final int SENIOR = 3;
 
     private String nome;
     private List<String> telefones;
     private Endereco endereco;
     private BigDecimal salario;
-    private final int codigoSetor;
-    private final int codigoCargo;
+
+    private Cargo cargo;
+    private Setor setor;
 
 
-    public Funcionario(String nome, List<String> telefones, Endereco endereco, BigDecimal salario, int codigoCargo, int codigoSetor) {
+    public Funcionario(String nome, List<String> telefones, Endereco endereco, BigDecimal salario, Cargo cargo, Setor setor) {
         this.nome = nome;
         this.telefones = telefones;
         this.endereco = endereco;
         this.salario = salario;
-        this.codigoCargo = codigoCargo;
-        this.codigoSetor = codigoSetor;
+        this.cargo = cargo;
+        this.setor = setor;
     }
 
     public String getNome() {
@@ -57,12 +50,20 @@ public class Funcionario {
         this.salario = salario;
     }
 
-    public int getCodigoSetor() {
-        return codigoSetor;
+    public Cargo getCargo() {
+        return cargo;
     }
 
-    public int getCodigoCargo() {
-        return codigoCargo;
+    public void setCargo(Cargo cargo) {
+        this.cargo = cargo;
+    }
+
+    public Setor getSetor() {
+        return setor;
+    }
+
+    public void setSetor(Setor setor) {
+        this.setor = setor;
     }
 
     @Override

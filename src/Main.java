@@ -21,10 +21,11 @@ public class Main {
 
 
         Funcionario funcionario1 = new Funcionario("Gabriel", telefonesFuncionario1 , enderecoFuncionario1,new BigDecimal("3000"),
-                                                    Funcionario.JUNIOR,Funcionario.DESENVOLVIMENTO);
+                                                    Cargo.JUNIOR,Setor.DESENVOLVIMENTO);
+
         FuncionarioTerceirizado funcionario2 = new FuncionarioTerceirizado("Claudinho", telefonesFuncionario2, enderecoFuncionario2,new BigDecimal("7000"),
-                                                    FuncionarioTerceirizado.SENIOR, FuncionarioTerceirizado.BANCO_DE_DADOS,"Restaurante Dois irmãos",
-                                                    LocalDate.of(2024,06,26));
+                                                    Cargo.SENIOR, Setor.BANCODEDADOS,"Consultoria Dois irmãos",
+                                                    LocalDate.of(2024,07,17));
 
         System.out.println(funcionario1);
         RecursosHumanos.reajustarSalario(funcionario1);

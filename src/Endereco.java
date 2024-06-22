@@ -14,10 +14,6 @@ public class Endereco {
         this.estado = estado;
     }
 
-    public String getRua() {
-        return rua;
-    }
-
     public void setRua(String rua) {
         this.rua = rua;
     }

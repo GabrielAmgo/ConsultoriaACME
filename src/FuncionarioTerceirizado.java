@@ -9,8 +9,8 @@ public class FuncionarioTerceirizado extends Funcionario{
     long PermanenciaEmDias;
 
 
-    public FuncionarioTerceirizado(String nome, List<String> telefones, Endereco endereco, BigDecimal salario, int codigoCargo, int codigoSetor, String empresaContratada, LocalDate dataFimContrato) {
-        super(nome, telefones, endereco, salario, codigoCargo, codigoSetor);
+    public FuncionarioTerceirizado(String nome, List<String> telefones, Endereco endereco, BigDecimal salario, Cargo cargo, Setor setor, String empresaContratada, LocalDate dataFimContrato) {
+        super(nome, telefones, endereco, salario, cargo, setor);
         this.empresaContratada = empresaContratada;
         this.dataFimContrato = dataFimContrato;
         this.PermanenciaEmDias = calcularPermanenciaEmDias(dataFimContrato);

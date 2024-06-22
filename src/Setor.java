@@ -1,0 +1,3 @@
+public enum Setor {
+    DESENVOLVIMENTO, DEVOPS, BANCODEDADOS
+}
