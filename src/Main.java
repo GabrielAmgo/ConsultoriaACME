@@ -30,6 +30,8 @@ public class Main {
         System.out.println(funcionario2);
         RecursosHumanos.reajustarSalario(funcionario2);
 
+        Funcionario funcionario3 = funcionario1.clone();
+        System.out.println(funcionario3);
 
     }
 }

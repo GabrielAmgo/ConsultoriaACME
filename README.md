@@ -19,9 +19,11 @@ Durante essa fase, o código inicial foi refatorado, eliminando os bad smells e 
 - Renomeado algumas variáveis e métodos para maios coesão.
 
 ## A terceira entrega
-Na terceira entrega, foi implementado alguns desing patterns, sendo eles:
+Na terceira entrega, foi implementado alguns desing patterns que podem ou não estar ligado ao projeto, sendo eles:
 
 Criacionais:
+    - Builder: O padrão Builder foi utilizado por sua facilidade em construir objetos com muitos parâmetros, e coube bem no projeto
+    - Prototype: Permite copiar objetos existentes sem fazer seu código ficar dependente de suas classes, para o projeto em questão, não é tão relevante.
 
 Estrutural:
 

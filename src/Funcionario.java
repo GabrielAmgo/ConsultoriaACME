@@ -1,7 +1,7 @@
 import java.math.BigDecimal;
 import java.util.List;
 
-public class Funcionario {
+public class Funcionario implements Cloneable{
 
     private String nome;
     private List<String> telefones;
@@ -17,6 +17,22 @@ public class Funcionario {
         this.salario = salario;
         this.cargo = cargo;
         this.setor = setor;
+    }
+
+    protected Funcionario(Funcionario target){
+        if (target != null){
+            this.nome = target.nome;
+            this.telefones = target.telefones;
+            this.endereco = target.endereco;
+            this.salario = target.salario;
+            this.cargo = target.cargo;
+            this.setor = target.setor;
+        }
+
+    }
+    @Override
+    public Funcionario clone() {
+        return new Funcionario(this);
     }
 
     public String getNome() {

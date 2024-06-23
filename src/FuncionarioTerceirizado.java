@@ -8,7 +8,6 @@ public class FuncionarioTerceirizado extends Funcionario {
     private LocalDate dataFimContrato;
     private long permanenciaEmDias;
 
-    // Construtor privado para ser acessado apenas pelo Builder
     private FuncionarioTerceirizado(Builder builder) {
         super(builder.nome, builder.telefones, builder.endereco, builder.salario, builder.cargo, builder.setor);
         this.empresaContratada = builder.empresaContratada;
@@ -16,12 +15,24 @@ public class FuncionarioTerceirizado extends Funcionario {
         this.permanenciaEmDias = calcularPermanenciaEmDias(builder.dataFimContrato);
     }
 
-    // Método privado para calcular a permanência em dias
+    private FuncionarioTerceirizado(FuncionarioTerceirizado target) {
+        super(target);
+        if (target != null) {
+            this.empresaContratada = target.empresaContratada;
+            this.dataFimContrato = target.dataFimContrato;
+            this.permanenciaEmDias = target.permanenciaEmDias;
+        }
+    }
+    @Override
+    public FuncionarioTerceirizado clone() {
+        return new FuncionarioTerceirizado(this);
+    }
+
     private long calcularPermanenciaEmDias(LocalDate dataFimContrato) {
         return LocalDate.now().until(dataFimContrato).getDays();
     }
 
-    // Getters para os atributos adicionais
+
     public String getEmpresaContratada() {
         return empresaContratada;
     }
@@ -34,7 +45,6 @@ public class FuncionarioTerceirizado extends Funcionario {
         return permanenciaEmDias;
     }
 
-    // toString() para exibir informações do funcionário terceirizado
     @Override
     public String toString() {
         return super.toString() + "\n" +
@@ -43,7 +53,6 @@ public class FuncionarioTerceirizado extends Funcionario {
                 ", permanenciaEmDias=" + permanenciaEmDias;
     }
 
-    // Classe Builder estática interna
     public static class Builder {
         private String nome;
         private List<String> telefones;
@@ -54,7 +63,6 @@ public class FuncionarioTerceirizado extends Funcionario {
         private String empresaContratada;
         private LocalDate dataFimContrato;
 
-        // Construtor que inicializa os parâmetros obrigatórios
         public Builder(String nome, BigDecimal salario) {
             this.nome = nome;
             this.salario = salario;
@@ -92,7 +100,6 @@ public class FuncionarioTerceirizado extends Funcionario {
             return this;
         }
 
-        // Método para construir o objeto FuncionarioTerceirizado
         public FuncionarioTerceirizado build() {
             return new FuncionarioTerceirizado(this);
         }
