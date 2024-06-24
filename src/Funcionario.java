@@ -1,4 +1,5 @@
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Funcionario implements Cloneable{
@@ -9,6 +10,7 @@ public class Funcionario implements Cloneable{
     private BigDecimal salario;
     private Cargo cargo;
     private Setor setor;
+    private List<Observer> observers = new ArrayList<>();
 
     Funcionario(String nome, List<String> telefones, Endereco endereco, BigDecimal salario, Cargo cargo, Setor setor) {
         this.nome = nome;
@@ -49,6 +51,21 @@ public class Funcionario implements Cloneable{
 
     public void setSalario(BigDecimal salario) {
         this.salario = salario;
+        notifyObservers();
+    }
+
+    public void addObserver(Observer observer) {
+        observers.add(observer);
+    }
+
+    public void removeObserver(Observer observer) {
+        observers.remove(observer);
+    }
+
+    private void notifyObservers() {
+        for (Observer observer : observers) {
+            observer.update(this);
+        }
     }
 
     public static class Builder {

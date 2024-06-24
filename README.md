@@ -16,15 +16,17 @@ Durante essa fase, o código inicial foi refatorado, eliminando os bad smells e 
 - O Switch de RecursosHumanos foi alterado de forma a receber as enums.
 - O método de reajustarSalario de RecursosHumanos foi refatorado de forma a ter apenas uma responsabilidade.
 - Criado novo método definePercentual, que ajusta qual percentual de reajuste salarial para cada cargo.
-- Renomeado algumas variáveis e métodos para maios coesão.
+- Renomeado algumas variáveis e métodos para maior coesão.
 
-## A terceira entrega
+### A terceira entrega
 Na terceira entrega, foi implementado alguns desing patterns que podem ou não estar ligado ao projeto, sendo eles:
 
 Criacionais:
-    - Builder: O padrão Builder foi utilizado por sua facilidade em construir objetos com muitos parâmetros, e coube bem no projeto
-    - Prototype: Permite copiar objetos existentes sem fazer seu código ficar dependente de suas classes, para o projeto em questão, não é tão relevante.
+- Builder: O padrão Builder foi utilizado por sua facilidade em construir objetos com muitos parâmetros, e coube bem no projeto.
+- Prototype: Permite copiar objetos existentes sem fazer o código ficar dependente de suas classes, para o projeto em questão, não é tão relevante.
 
 Estrutural:
+- Proxy: O proxy atua como um intermediário que pode adicionar uma camada de controle e proteção sem modificar a lógica existente da classe Funcionario.
 
 Comportamental:
+- Observer: Este padrão foi utilizado pois através dele é possível notificar os usuários a cada alteração de salário de um funcionário.

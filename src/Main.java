@@ -24,6 +24,15 @@ public class Main {
                 .dataFimContrato(LocalDate.of(2024,07,17))
                 .build();
 
+        FuncionarioProxy proxy = new FuncionarioProxy(funcionario1, false);
+
+        try {
+            System.out.println("Salário: " + proxy.getSalario());
+        } catch (SecurityException e) {
+            System.out.println(e.getMessage());
+        }
+
+
         System.out.println(funcionario1);
         RecursosHumanos.reajustarSalario(funcionario1);
 
@@ -33,5 +42,15 @@ public class Main {
         Funcionario funcionario3 = funcionario1.clone();
         System.out.println(funcionario3);
 
+        FuncionarioProxy proxyAutorizado = new FuncionarioProxy(funcionario1, true);
+        System.out.println("Salário: " + proxyAutorizado.getSalario());
+
+        InterfaceUsuario usuario1 = new InterfaceUsuario("Usuário 1");
+        InterfaceUsuario usuario2 = new InterfaceUsuario("Usuário 2");
+
+        funcionario1.addObserver(usuario1);
+        funcionario1.addObserver(usuario2);
+
+        funcionario1.setSalario(new BigDecimal("6500"));
     }
 }
